@@ -1,0 +1,7 @@
+name: ""
+navbar:
+  title: "10T downstream analysis"
+  left:
+    - text: "IGR distribution"
+      href: index.html
+output_dir: "docs"
