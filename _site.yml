@@ -2,6 +2,6 @@ name: ""
 navbar:
   title: "10T downstream analysis"
   left:
-    - text: "IGR distribution"
+    - text: "Table of contents"
       href: index.html
 output_dir: "docs"
