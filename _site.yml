@@ -1,6 +1,6 @@
 name: ""
 navbar:
-  title: "10T downstream analysis"
+  title: "10T downstream analyses"
   left:
     - text: "Table of contents"
       href: index.html
