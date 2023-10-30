@@ -1,0 +1,47 @@
+---
+title: "CpG DNAme"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# Gene body
+```{r,gene_body,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/DNAme/genebody", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# Enhancers {.tabset}
+
+## Active enhancers in PA
+```{r,PA_active_enhancers,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/DNAme/enhancers/PA", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Intersect enhancers
+```{r,intersect_active_enhancers,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/DNAme/enhancers/intersect", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
