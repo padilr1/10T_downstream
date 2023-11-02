@@ -1,0 +1,53 @@
+---
+title: "Effect of gene expression on invasion of K27me3/K9me3"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# Gene body plots
+
+Besides K36me2 which are normalized by mass-spec, these signals are only library depth-normalized (CPM).
+
+## K36me2
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/all_histone_marks/gene_body_plots/K36me2", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## DNAme
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/all_histone_marks/gene_body_plots/DNAme", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K27me3
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/all_histone_marks/gene_body_plots/K27me3", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K9me3
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/all_histone_marks/gene_body_plots/K9me3", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
