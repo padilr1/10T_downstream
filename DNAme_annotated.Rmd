@@ -38,6 +38,24 @@ include_graphics(imageList,dpi = 600)
 
 ---
 
+# Promoters {.tabset}
+
+Centered on promoters from genes in the 1st quantile (lowly expressed genes)
+
+## K27me3
+```{r,promoters_K27me3,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me3/promoters", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## DNAme
+```{r,promoters_DNAme,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/DNAme/promoters", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
 # Enhancers {.tabset}
 
 ## Active enhancers in PA
