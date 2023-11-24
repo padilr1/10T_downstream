@@ -1,5 +1,5 @@
 ---
-title: "K9me gene body metaplots"
+title: "K9me"
 output:
   html_document:
     toc: true
@@ -22,13 +22,23 @@ library(data.table)
 
 ---
 
-# ChIP-seq K9me3
+# Mass spec results
+```{r,ms,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K9me3/mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# Gene body metaplots
+
+## ChIP-seq K9me3
 ```{r,chip,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K9me3/genebody_metaplots", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
-# Cut and run K9me3
+## Cut and run K9me3
 ```{r,cut_and_run,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/K9me3/genebody_metaplots/cut_and_run", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
