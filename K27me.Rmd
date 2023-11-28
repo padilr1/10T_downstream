@@ -1,5 +1,5 @@
 ---
-title: "K27me gene body metaplots"
+title: "K27me"
 output:
   html_document:
     toc: true
@@ -22,25 +22,45 @@ library(data.table)
 
 ---
 
-# K27me3
+# Gene body metaplots {.tabset}
+
+## K27me3
 ```{r,K27me3,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me3/gene_body_metaplots", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
----
-
-# K27me2
+## K27me2
 ```{r,K27me2,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me2/gene_body_metaplots", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
----
-
-# K27me1
+## K27me1
 ```{r,K27me1,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me1/gene_body_metaplots", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# Exon/intron enrichment ratios {.tabset}
+
+## K27me3
+```{r,K27me3_ex_in,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me3/exon_intron_ratios", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K27me2
+```{r,K27me2_ex_in,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me2/exon_intron_ratios", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K27me1
+```{r,K27me1_ex_in,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me1/exon_intron_ratios", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 

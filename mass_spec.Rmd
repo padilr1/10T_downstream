@@ -1,0 +1,48 @@
+---
+title: "Mass spec results"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# K36me
+```{r,K36me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K36me/mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# K27me
+```{r,K27me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me_mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# K4me
+```{r,K4me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K4me/mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# K9me
+```{r,ms_K9me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K9me3/mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
