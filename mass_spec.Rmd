@@ -29,12 +29,22 @@ include_graphics(imageList,dpi = 600)
 ```
 
 # K27me
+<ul>
+  <li>There is a decrease in K27me1 following K36me2 depletion, with a corresponding increase in K27me2 and more substantially in K27me3, likely due to the lowest K27me state (me1) being upgraded to higher orders of methylation. </li>
+</ul>
+
 ```{r,K27me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me_mass_spec", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
 # K4me
+<ul>
+  <li>Following K36me2 depletion, there is a trend for increasing K4me. </li>
+  <li>Interestingly, there is a decrease in K4me2 following SETD2-KO. However, it could be that something went wrong for these samples during mass-spec. For these two samples, the values are 0.0001% and 0.0004% H3K4me2-marked histones respectively. </li>
+  <li>Additionally, there appears to be a decrease in K4me3 following NSD3-KO although there is quite a lot of variability with respect to the replicates. Perhaps a more targeted PRM for K4me3 or western blotting to verify some of these results would be helpful. </li>
+</ul>
+
 ```{r,K4me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K4me/mass_spec", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
