@@ -1,0 +1,55 @@
+---
+title: "RNA-seq"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# PCA
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/PCA", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# HC
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/HC", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# Paired comparisons {.tabset}
+
+## TKO compared to QKO
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/paired_comparisons/TKO_compared_to_QKO", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## QKO compared to QuiKO
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/paired_comparisons/QKO_compared_to_QuiKO", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
