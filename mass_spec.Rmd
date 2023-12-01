@@ -50,6 +50,15 @@ imageList <- list.files("~/Documents/10T_downstream/pushed_images/K4me/mass_spec
 include_graphics(imageList,dpi = 600)
 ```
 
+# K27ac
+<ul>
+  <li>Following K36me2 depletion, there is a trend for increasing K27ac. </li>
+</ul>
+```{r,K27ac,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27ac", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
 # K9me
 ```{r,ms_K9me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K9me3/mass_spec", pattern= "*.png", full.names=T)
