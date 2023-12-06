@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Analyzing regions of K9me3 loss</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">10T downstream analyses</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Table of contents</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Analyzing regions of K9me3 loss</h1>
+
+</div>
+
+
+<hr />
+<div id="kb-bin-cluster-analysis" class="section level1 tabset">
+<h1 class="tabset">10kb bin cluster analysis</h1>
+<ul>
+<li>
+Cluster B coincides with K9me3 regions that are highly enriched in PA
+that is lost in TKO.
+</li>
+<li>
+Cluster A coincides with lower enriched K9me3 regions found in both PA
+and TKO, where we find the majority of ATAC-seq peaks are found (see IGV
+snapshot)
+</li>
+</ul>
+<div id="density-plots" class="section level2">
+<h2>Density plots</h2>
+<p><img src="pushed_images/Analyzing_K9me3_loss/10kb_cluster_analysis/10T.PA_1.TKO_1.H3K9me3.clus-1.png" width="100%" /></p>
+</div>
+<div id="igv-snapshot" class="section level2">
+<h2>IGV snapshot</h2>
+<p><img src="pushed_images/Analyzing_K9me3_loss/IGV_snapshot/Screenshot%202023-12-06%20at%2011.30.44%E2%80%AFAM.png" width="100%" /></p>
+</div>
+</div>
+<div id="atacseq-peaks-within-k9me3-clusters"
+class="section level1 tabset">
+<h1 class="tabset">ATACseq peaks within K9me3 clusters</h1>
+<ul>
+<li>
+Below describes ATAC-seq peaks within these K9me3 clusters.
+</li>
+<li>
+Note: K9me3 10kb bins were merged within 100000bp of each other.
+</li>
+</ul>
+<div id="clustb" class="section level2 tabset">
+<h2 class="tabset">ClustB</h2>
+<ul>
+<li>
+2423 total ATAC-seq peaks are found within these K9me3 cluster B
+domains.
+</li>
+<li>
+1648 of these peaks open up in TKO within these K9me3 clustB domains.
+ie. chromatin regions are opening in the regions where there are K9me3
+loss in the TKO cell line. These new ATACseq peaks are typically small
+peaks (see IGV snapshot).
+</li>
+<li>
+374 ATAC-seq peaks are found in both TKO and PA cell lines in these
+K9me3 clustB domains.
+</li>
+</ul>
+<div id="venn-diagram" class="section level3">
+<h3>Venn-diagram</h3>
+<p><img src="pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustB/venn_diagram_clustB.png" width="50%" /></p>
+</div>
+<div id="igv-snapshot-1" class="section level3">
+<h3>IGV snapshot</h3>
+<p><img src="pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustB/snapshot/Screenshot%202023-12-06%20at%2012.26.24%E2%80%AFPM.png" width="100%" /><img src="pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustB/snapshot/Screenshot%202023-12-06%20at%2012.29.53%E2%80%AFPM.png" width="100%" /></p>
+</div>
+</div>
+<div id="clusta" class="section level2">
+<h2>ClustA</h2>
+<p><img src="pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustA/venn_diagram_clustA.png" width="50%" /></p>
+</div>
+</div>
+<div id="heatmaps" class="section level1 tabset">
+<h1 class="tabset">Heatmaps</h1>
+<div id="union" class="section level2">
+<h2>Union</h2>
+<ul>
+<li>
+Centering ATAC/ChIP-seq signal on a union of ATAC-seq peaks within K9me3
+cluster A and Cluster B.
+</li>
+<li>
+At cluster B peaks, there is an increase in TKO ATAC-seq signal, but
+this is likely as a result of TKO ATAC-seq peaks constituting a greater
+proportion of the union peaks.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/union/ag.png" width="60%" /><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/union/heatmap.png" width="60%" /></p>
+</div>
+<div id="intersect" class="section level2">
+<h2>Intersect</h2>
+<ul>
+<li>
+Centering ATAC/ChIP-seq signal on an intersect of ATAC-seq peaks within
+K9me3 cluster A and Cluster B.
+</li>
+<li>
+When looking at the intersect, the signal in cluster B ATAC-seq peaks is
+now more similar between PA and TKO. However, we actually see higher
+K27ac in PA in ATAC-seq peaks in both clusters.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/intersect/ag.png" width="60%" /><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/intersect/hm.png" width="60%" /></p>
+</div>
+<div id="individual" class="section level2">
+<h2>Individual</h2>
+<ul>
+<li>
+Centering ATAC/ChIP-seq signal on either TKO-only or PA-only ATAC-seq
+peaks within K9me3 Cluster B.
+</li>
+<li>
+As a sanity check, indeed we see higher TKO ATAC-seq signal within
+cluster B TKO ATAC-seq peaks. The same is found for PA.
+</li>
+<li>
+These small ATAC-seq peaks seem to be opening up in the TKO sample in
+regions of K9me3 loss and some of these new open chromatin regions are
+marked by K27ac.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/individual/ag.png" width="60%" /><img src="pushed_images/Analyzing_K9me3_loss/heatmaps/individual/hm.png" width="60%" /></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

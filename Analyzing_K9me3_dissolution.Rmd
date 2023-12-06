@@ -1,0 +1,108 @@
+---
+title: "Analyzing regions of K9me3 loss"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# 10kb bin cluster analysis {.tabset}
+
+<ul>
+  <li>Cluster B coincides with K9me3 regions that are highly enriched in PA that is lost in TKO. </li>
+  <li>Cluster A coincides with lower enriched K9me3 regions found in both PA and TKO, where we find the majority of ATAC-seq peaks are found (see IGV snapshot) </li>
+</ul>
+
+## Density plots
+```{r,bin_analysis,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/10kb_cluster_analysis", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## IGV snapshot
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/IGV_snapshot", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# ATACseq peaks within K9me3 clusters {.tabset}
+
+<ul>
+  <li>Below describes ATAC-seq peaks within these K9me3 clusters.</li>
+  <li>Note: K9me3 10kb bins were merged within 100000bp of each other.</li>
+</ul>
+
+## ClustB {.tabset}
+<ul>
+  <li> 2423 total ATAC-seq peaks are found within these K9me3 cluster B domains. </li>
+  <li> 1648 of these peaks open up in TKO within these K9me3 clustB domains. ie. chromatin regions are opening in the regions where there are K9me3 loss in the TKO cell line. These new ATACseq peaks are typically small peaks (see IGV snapshot).</li>
+  <li>374 ATAC-seq peaks are found in both TKO and PA cell lines in these K9me3 clustB domains.</li>
+</ul>
+
+### Venn-diagram
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustB", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### IGV snapshot
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustB/snapshot", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## ClustA
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustA", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# Heatmaps {.tabset}
+
+## Union
+
+<ul>
+  <li> Centering ATAC/ChIP-seq signal on a union of ATAC-seq peaks within K9me3 cluster A and Cluster B.</li>
+  <li> At cluster B peaks, there is an increase in TKO ATAC-seq signal, but this is likely as a result of TKO ATAC-seq peaks constituting a greater proportion of the union peaks.</li>
+</ul>
+```{r,echo = FALSE,fig.show = "hold", out.width = "60%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/heatmaps/union", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Intersect
+<ul>
+  <li> Centering ATAC/ChIP-seq signal on an intersect of ATAC-seq peaks within K9me3 cluster A and Cluster B.</li>
+  <li> When looking at the intersect, the signal in cluster B ATAC-seq peaks is now more similar between PA and TKO. However, we actually see higher K27ac in PA in ATAC-seq peaks in both clusters. </li>
+</ul>
+```{r,echo = FALSE,fig.show = "hold", out.width = "60%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/heatmaps/intersect", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Individual
+<ul>
+  <li> Centering ATAC/ChIP-seq signal on either TKO-only or PA-only ATAC-seq peaks within K9me3 Cluster B.</li>
+  <li> As a sanity check, indeed we see higher TKO ATAC-seq signal within cluster B TKO ATAC-seq peaks. The same is found for PA.</li>
+  <li> These small ATAC-seq peaks seem to be opening up in the TKO sample in regions of K9me3 loss and some of these new open chromatin regions are marked by K27ac.</li>
+</ul>
+```{r,echo = FALSE,fig.show = "hold", out.width = "60%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/heatmaps/individual", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
