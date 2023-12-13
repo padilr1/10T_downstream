@@ -71,3 +71,9 @@ imageList <- list.files("~/Documents/10T_downstream/pushed_images/K9me3/mass_spe
 include_graphics(imageList,dpi = 600)
 ```
 
+# H3K79me
+```{r,ms_K79me,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K79me_mass_spec", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+

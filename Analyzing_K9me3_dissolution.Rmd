@@ -25,8 +25,8 @@ library(data.table)
 # 10kb bin cluster analysis {.tabset}
 
 <ul>
-  <li>Cluster B coincides with K9me3 regions that are highly enriched in PA that is lost in TKO. </li>
-  <li>Cluster A coincides with lower enriched K9me3 regions found in both PA and TKO, where we find the majority of ATAC-seq peaks are found (see IGV snapshot) </li>
+  <li>Cluster B coincides with K9me3 regions that are highly enriched in PA that is lost in TKO. Indeed cluster B is found at intergenic regions (gene-poor regions).</li>
+  <li>Cluster A coincides with lower enriched K9me3 regions found in both PA and TKO, where more ATAC-seq peaks are found (see IGV snapshot). </li>
 </ul>
 
 ## Density plots
@@ -40,6 +40,8 @@ include_graphics(imageList,dpi = 600)
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/IGV_snapshot", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
+
+---
 
 # ATACseq peaks within K9me3 clusters {.tabset}
 
@@ -72,6 +74,8 @@ include_graphics(imageList,dpi = 600)
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/venn_diagrams/clustA", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
+
+---
 
 # Heatmaps {.tabset}
 
