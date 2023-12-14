@@ -65,3 +65,12 @@ include_graphics(imageList,dpi = 600)
 ```
 
 ---
+
+# K27me3 in gene bodies
+
+Genes were not filtered according to gene length here.
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27me3/gene_body_metaplots/V1", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
