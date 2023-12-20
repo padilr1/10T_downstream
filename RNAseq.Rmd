@@ -54,7 +54,7 @@ include_graphics(imageList,dpi = 600)
 
 # Distribution histograms {.tabset}
 <ul>
-  <li>For each comparison, only genes with FPKM > 0.5 across conditions was used.</li>
+  <li>For each comparison, only genes with FPKM > 1 across conditions was used.</li>
   <li>No clear trends emerges from these plots </li>
 </ul>
 
