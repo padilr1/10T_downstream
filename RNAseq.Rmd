@@ -91,16 +91,14 @@ include_graphics(imageList,dpi = 600)
 # Assessing gene expression in specific quantiles {.tabset}
 
 <ul>
-  <li>Per gene, the mean FPKM across all samples were computed. This was used to filter genes with FPKM < 0.1. Afterwards, the bottom 2000 genes were taken as lowly expressed genes and the top 2000 genes were taken as highly expressed genes. Additionally, 2000 random genes were generated for plotting.</li>
-  <li>Replicated were averaged per condition. </li>
-  <li>Wilcox test was used to calculate pairwise p-value against the PA sample and adjusted using FDR. </li>
+  <li>Per gene, the mean FPKM across all samples were computed. This was used to filter for genes with FPKM > 1. Afterwards, the bottom 2000 genes were taken as lowly expressed genes and the top 2000 genes were taken as highly expressed genes. Additionally, 2000 random genes were generated for plotting.</li>
+  <li>Replicates were averaged per condition. </li>
+  <li>Wilcox test was used to calculate pairwise comparison p-value against the PA sample and adjusted using FDR. </li>
 </ul>
 
 ## Lowly expressed genes
 <ul>
-  <li> There are no significant differences in gene expression between ASH1L-KO and PA. This is similarly found for SETD2-KO. Since SETD2 deposits me3 at actively transcribed genes, we expect little me3 at these lowly expressed genes and thus, its knockout does not affect gene expression.</li>
-  <li> Knocking out NSD2 seems to push lowly expressed genes towards downregulation (supports NSD2's role in genes?). The DKO leads to a large downregulation of these lowly expressed genes. I would suspect that K27me3 invades the promoters of these genes. </li>
-  <li> In the K36M-OE, and multi-KO cell lines, we observe significant increases in gene expression. Probably driven by genes with low expression suddenly being expressed in regions of K9me3 loss? </li>
+  <li>There is a trend for decreasing gene expression for lowly expressed genes following K36me depletion.</li>
 </ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/quantile_separated/lowly_exp_genes", pattern= "*.png", full.names=T)
@@ -108,6 +106,9 @@ include_graphics(imageList,dpi = 600)
 ```
 
 ## Highly expressed genes
+<ul>
+  <li>Unexpectedly, gene expression increases for highly expressed genes following me2 depletion.</li>
+</ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/quantile_separated/highly_exp_genes", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
