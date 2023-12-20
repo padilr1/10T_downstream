@@ -123,12 +123,20 @@ include_graphics(imageList,dpi = 600)
 # Promoters {.tabset}
 
 ## K27me3
+<ul>
+  <li>For lowly expressed genes, there is greater K27me3 at the promoters of DKO, TKO and SETD2KO.</li>
+  <li> For highly expressed genes, there is also greater K27me3 at the promoters of DKO, TKO and K36M-OE.</li>
+</ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/promoters/K27me3", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
 ## K9me3
+<ul>
+  <li>For lowly expressed genes, there is greater K9me3 at the promoters of TKO and K36M_OE. DKO seems to have comparable levels at the promoter of these genes to PA.</li>
+  <li> For highly expressed genes, the difference of K9me3 levels at the promoter across samples is attenuated.</li>
+</ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/promoters/K9me3", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
@@ -141,6 +149,9 @@ include_graphics(imageList,dpi = 600)
 ```
 
 ## K27ac
+<ul>
+  <li>At the promoters of lowly expressed genes, there appears to be slightly greater K27ac between K36M_OE/TKO versus PA. This increase appears to be more pronounced at the promoters of highly expressed genes.</li>
+</ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/promoters/K27ac", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
@@ -153,6 +164,9 @@ include_graphics(imageList,dpi = 600)
 ```
 
 ## DNAme
+<ul>
+  <li>Surprisingly, with greater me2 depletion, there is less DNAme at the promoters of lowly expressed genes.</li>
+</ul>
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/promoters/DNAme", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
