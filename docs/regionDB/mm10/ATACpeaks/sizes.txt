@@ -1,0 +1,3 @@
+filename	size
+closed_ATACpeaks.bed	3237
+open_ATACpeaks.bed	2015

@@ -362,6 +362,113 @@ and TKO, where more ATAC-seq peaks are found (see IGV snapshot).
 <hr />
 </div>
 </div>
+<div id="genes-within-and-outside-clusb" class="section level1 tabset">
+<h1 class="tabset">Genes within and outside clusB</h1>
+<ul>
+<li>
+Genes that overlap both cluster A and B domains are excluded from these
+analyses. See example below with the gene <i>Dnah5</i>.
+</li>
+<li>
+Only genes with FPKM &gt; 1 are included.
+</li>
+<li>
+NSD3-unedit and two unedited clones of NSD1-KO are used for comparison.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/gene_expression/crossing_clusB_clusA/genes_between_clusA_clusB.png" width="100%" /></p>
+<div id="genes-within-clusb" class="section level2">
+<h2>Genes within clusB</h2>
+<ul>
+<li>
+Following TKO, genes within cluster B increase in expression, consistent
+with loss of the silencing mark K9me3 in these regions.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/gene_expression/within_clusB/violin/genes_within_clusB.FPKM.NSD_unedit_vs_TKO.violin_plot.png" width="100%" /></p>
+</div>
+<div id="genes-outside-clusb" class="section level2">
+<h2>Genes outside clusB</h2>
+<ul>
+<li>
+When filtering for genes found only in cluster A, there is a slight
+decrease in expression, consistent with loss of K36me2 and invasion of
+K27me3 in these active regions.
+</li>
+</ul>
+<p><img src="pushed_images/Analyzing_K9me3_loss/gene_expression/outside_clusB/violin/genes_outside_clusB.FPKM.NSD_unedit_vs_TKO.violin_plot.png" width="100%" /></p>
+<hr />
+</div>
+</div>
+<div id="te-within-and-outside-of-clusb" class="section level1 tabset">
+<h1 class="tabset">TE within and outside of clusB</h1>
+<ul>
+<li>
+TEs that overlap both cluster A and B domains are excluded from these
+analyses.
+</li>
+<li>
+Only TEs with FPKM &gt; 1 are included.
+</li>
+<li>
+NSD3-unedit and two unedited clones of NSD1-KO are used for comparison.
+</li>
+</ul>
+<div id="te-within-clusb" class="section level2 tabset">
+<h2 class="tabset">TE within clusB</h2>
+<ul>
+<li>
+There’s an upregulation of about 166 TEs in cluster B regions, where
+there are K9me3 loss in TKO. Additionally, when looking at violin plots,
+there is an overall upregulation of TEs within these cluster B regions
+in the TKO cell line compared to parental.
+</li>
+<li>
+Loss of K9me3 in the TKO cell line likely drives this upregulation of TE
+expression
+</li>
+</ul>
+<div id="volcano" class="section level3">
+<h3>Volcano</h3>
+<p><img src="pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/volcano/volcano.TE_expression.TEs_within_clusB.NSD_unedit_TKO.png" width="100%" /></p>
+</div>
+<div id="violin" class="section level3">
+<h3>Violin</h3>
+<p><img src="pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/violin/TE_within_clusB.FPKM.NSD_unedit_vs_TKO.violin_plot.png" width="100%" /></p>
+</div>
+</div>
+<div id="te-outside-clusb" class="section level2 tabset">
+<h2 class="tabset">TE outside clusB</h2>
+<ul>
+<li>
+The volcano plots indicate more downregulated TEs than upregulated in
+the TKO compared to PA, regardless of the log2FC cutoff. This is
+consistent with gain of K9me3 in cluster A regions in TKO compared to
+PA, wherein K9me3 suppresses TE expression.
+</li>
+<li>
+However, the violin plots indicate a slight overall decrease in TE
+expression, although the decrease is marginal.
+</li>
+</ul>
+<div id="volcano-1" class="section level3 tabset">
+<h3 class="tabset">Volcano</h3>
+<div id="abslog2fc-0" class="section level4">
+<h4>abs(log2FC) &gt; 0</h4>
+<p><img src="pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/logFC_0/volcano_cutoff_logFC_0.TE_expression.TEs_outside_clusB.NSD_unedit_TKO.png" width="100%" /></p>
+</div>
+<div id="abslog2fc-2" class="section level4">
+<h4>abs(log2FC) &gt; 2</h4>
+<p><img src="pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/logFC_2/volcano_cutoff_logFC_2.TE_expression.TEs_outside_clusB.NSD_unedit_TKO.png" width="100%" /></p>
+</div>
+</div>
+<div id="violin-1" class="section level3">
+<h3>Violin</h3>
+<p><img src="pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/violin/TE_outside_clusB.FPKM.NSD_unedit_vs_TKO.violin_plot.png" width="100%" /></p>
+<hr />
+</div>
+</div>
+</div>
 <div id="atacseq-peaks-within-k9me3-clusters"
 class="section level1 tabset">
 <h1 class="tabset">ATACseq peaks within K9me3 clusters</h1>

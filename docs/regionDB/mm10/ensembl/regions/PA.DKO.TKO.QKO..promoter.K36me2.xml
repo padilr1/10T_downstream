@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="mm10" hasGeneTrack="true" hasSequenceTrack="true" locus="chr19:47511790-47577523" version="8">
+    <Resources>
+        <Resource name="10T.NSD12DKO_c1.K36me2.ms.logcpm.bw" path="../../../../work/April.2022.analysis/data/ms.logcpm/10T.NSD12DKO_c1.K36me2.ms.logcpm.bw"/>
+        <Resource name="10T.PA.K36me2.ms.logcpm.bw" path="../../../../work/April.2022.analysis/data/ms.logcpm/10T.PA.K36me2.ms.logcpm.bw"/>
+        <Resource name="Promoter.bed" path="Promoter.bed"/>
+        <Resource name="fourth.promoter.bed" path="../../../../work/RNAseq_analysis_April_2023/PA.promoters/fourth.promoter.bed"/>
+        <Resource name="10T1-2_QKO-c1_K36me2_S13.cpm.bw" path="../../../../data/cpm.bw/K36me.cpm.bw/K36me2/10T1-2_QKO-c1_K36me2_S13.cpm.bw"/>
+        <Resource name="10T.TKO.K36me2.ms.logcpm.bw" path="../../../../work/April.2022.analysis/data/ms.logcpm/10T.TKO.K36me2.ms.logcpm.bw"/>
+    </Resources>
+    <Panel height="258" name="DataPanel" width="1327">
+        <Track attributeKey="10T.PA.K36me2.ms.logcpm.bw" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="0,102,0" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/work/April.2022.analysis/data/ms.logcpm/10T.PA.K36me2.ms.logcpm.bw" name="Parental" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.14689523" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="10T.NSD12DKO_c1.K36me2.ms.logcpm.bw" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="0,204,0" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/work/April.2022.analysis/data/ms.logcpm/10T.NSD12DKO_c1.K36me2.ms.logcpm.bw" name="NSD1/2-DKO" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.063799165" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="10T.TKO.K36me2.ms.logcpm.bw" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="102,0,102" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/work/April.2022.analysis/data/ms.logcpm/10T.TKO.K36me2.ms.logcpm.bw" name="SETD2-NSD1/2-TKO" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.17054948" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="10T1-2_QKO-c1_K36me2_S13.cpm.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/data/cpm.bw/K36me.cpm.bw/K36me2/10T1-2_QKO-c1_K36me2_S13.cpm.bw" name="10T1-2_QKO-c1_K36me2_S13.cpm.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="2.5807743" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="fourth.promoter.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" displayMode="EXPANDED" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/work/RNAseq_analysis_April_2023/PA.promoters/fourth.promoter.bed" name="fourth.promoter.bed" visible="true"/>
+        <Track attributeKey="Promoter.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" fontSize="10" id="/Users/padilr1/Documents/10T_K36me2/regionDB/mm10/ensembl/regions/Promoter.bed" name="Promoter.bed" visible="true"/>
+    </Panel>
+    <Panel height="385" name="FeaturePanel" width="1327">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="Refseq genes" clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" colorScale="ContinuousColorScale;0.0;406.0;255,255,255;0,0,178" displayMode="EXPANDED" fontSize="10" height="35" id="mm10_genes" name="Refseq genes" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.4"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

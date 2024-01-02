@@ -43,6 +43,97 @@ include_graphics(imageList,dpi = 600)
 
 ---
 
+# Genes within and outside clusB {.tabset}
+
+<ul>
+  <li>Genes that overlap both cluster A and B domains are excluded from these analyses. See example below with the gene <i>Dnah5</i>.</li>
+  <li>Only genes with FPKM > 1 are included.</li>
+  <li> NSD3-unedit and two unedited clones of NSD1-KO are used for comparison. </li>
+</ul>
+
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/gene_expression/crossing_clusB_clusA", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Genes within clusB
+
+<ul>
+  <li>Following TKO, genes within cluster B increase in expression, consistent with loss of the silencing mark K9me3 in these regions.</li>
+</ul>
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/gene_expression/within_clusB/violin", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Genes outside clusB
+
+<ul>
+  <li>When filtering for genes found only in cluster A, there is a slight decrease in expression, consistent with loss of K36me2 and invasion of K27me3 in these active regions.</li>
+</ul>
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/gene_expression/outside_clusB/violin", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
+# TE within and outside of clusB {.tabset}
+
+<ul>
+  <li>TEs that overlap both cluster A and B domains are excluded from these analyses. </li>
+  <li>Only TEs with FPKM > 1 are included.</li>
+  <li> NSD3-unedit and two unedited clones of NSD1-KO are used for comparison. </li>
+</ul>
+
+## TE within clusB {.tabset}
+
+<ul>
+  <li>There's an upregulation of about 166 TEs in cluster B regions, where there are K9me3 loss in TKO. Additionally, when looking at violin plots, there is an overall upregulation of TEs within these cluster B regions in the TKO cell line compared to parental.</li>
+  <li>Loss of K9me3 in the TKO cell line likely drives this upregulation of TE expression </li>
+</ul>
+
+### Volcano
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/volcano", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### Violin
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/violin", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## TE outside clusB {.tabset}
+
+<ul>
+  <li>The volcano plots indicate more downregulated TEs than upregulated in the TKO compared to PA, regardless of the log2FC cutoff. This is consistent with gain of K9me3 in cluster A regions in TKO compared to PA, wherein K9me3 suppresses TE expression.</li>
+  <li>However, the violin plots indicate a slight overall decrease in TE expression, although the decrease is marginal. </li>
+</ul>
+
+### Volcano {.tabset}
+
+#### abs(log2FC) > 0
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/logFC_0", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+#### abs(log2FC) > 2
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/logFC_2", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### Violin
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("/Users/padilr1/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/violin", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
+
 # ATACseq peaks within K9me3 clusters {.tabset}
 
 <ul>
