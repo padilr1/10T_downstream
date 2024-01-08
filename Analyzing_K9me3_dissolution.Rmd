@@ -81,15 +81,15 @@ include_graphics(imageList,dpi = 600)
 # TE within and outside of clusB {.tabset}
 
 <ul>
-  <li>TEs that overlap both cluster A and B domains are excluded from these analyses. </li>
-  <li>Only TEs with FPKM > 1 are included.</li>
-  <li> NSD3-unedit and two unedited clones of NSD1-KO are used for comparison. </li>
+  <li>TEs that overlap both cluster A and B domains are excluded from these analyses.</li>
+  <li> Only TEs found at intergenic regions and with FPKM > 1 are included.</li>
+  <li> NSD3-unedit and two unedited clones of NSD1-KO are used for comparison.</li>
 </ul>
 
 ## TE within clusB {.tabset}
 
 <ul>
-  <li>There's an upregulation of about 166 TEs in cluster B regions, where there are K9me3 loss in TKO. Additionally, when looking at violin plots, there is an overall upregulation of TEs within these cluster B regions in the TKO cell line compared to parental.</li>
+  <li>There's an upregulation of about 475 TEs in cluster B regions, where there are K9me3 loss in TKO. Additionally, when looking at violin plots, there is an overall upregulation of TEs within these cluster B regions in the TKO cell line compared to parental.</li>
   <li>Loss of K9me3 in the TKO cell line likely drives this upregulation of TE expression </li>
 </ul>
 
@@ -108,8 +108,7 @@ include_graphics(imageList,dpi = 600)
 ## TE outside clusB {.tabset}
 
 <ul>
-  <li>The volcano plots indicate more downregulated TEs than upregulated in the TKO compared to PA, regardless of the log2FC cutoff. This is consistent with gain of K9me3 in cluster A regions in TKO compared to PA, wherein K9me3 suppresses TE expression.</li>
-  <li>Additionally, the violin plots indicate a slight overall decrease in TE expression,consistent with a gain of K9me3 in these regions in the TKO cell line. </li>
+  <li>The volcano and violin plots indicate an upregulation of TEs in TKO compared to NSD-unedited.</li>
 </ul>
 
 ### Volcano {.tabset}
