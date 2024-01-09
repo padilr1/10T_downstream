@@ -1,0 +1,87 @@
+---
+title: "TE analysis"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 3
+    smooth_scroll: false
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(reshape2)
+library(tidyverse)
+library(reactable)
+library(data.table)
+```
+
+---
+
+# TE subfamilies {.tabset}
+
+<b> Processing and filtering steps </b>
+<ul>
+  <li> TEs that overlap both cluster A and B domains are excluded from these analyses.</li>
+  <li> Only TEs found at intergenic regions and with FPKM > 1 are included.</li>
+  <li> NSD3-unedit and two unedited clones of NSD1-KO are used for comparison.</li>
+  <li> TEs within 10kb upstream and downstream of genes are excluded </li>
+  <li> TEs are grouped within their respective sub-families </li>
+  <li> Exclusive subfamilies are filtered by at least 3 members of the subfamily having signifcant fold change in the positive or negative direction </li>
+</ul>
+
+<b> Notable genome-wide observations </b>
+<ul>
+  <li>More TE subfamilies within the family <b>ERV1 and ERVK</b> tend to be upregulated than downregulated genome-wide regardless of whether they are found in cluster A or cluster B regions. On the other hand, more TE subfamilies within the family of <b>ERVL</b> tend to be downregulated than upregulated genome-wide.</li>
+</ul>
+
+## TE subfamilies within clusB {.tabset}
+
+<ul>
+  <li>About 2 fold more TE subfamilies become upregulated in cluster B regions following TKO. Exclusively in these cluster B domains, more TE subfamilies in <b> ERVL-MaLR, L1 and L2 </b> become significantly upregulated than downregulated.</li>
+</ul>
+
+### Volcano
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/volcano/TE_subfamilies", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### TE subfamily counts
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/within_clusB/subfamily_counts", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## TE outside clusB {.tabset}
+
+<ul>
+  <li>A similar number of TE subfamilies become up- and downregulated in cluster A regions. Exclusively within cluster A regions, however, TE families of <b> ERVL-MaLR, hAT-Charlie, and L1 </b> become downregulated. </li>
+  <li>Significantly regulated subfamilies were filtered using abs(log2FC) > 1 and padj < 0.05. </li>
+</ul>
+
+### Volcano {.tabset}
+
+#### abs(log2FC) > 0
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/TE_subfamily/logFC_0", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+#### abs(log2FC) > 1
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/volcano/TE_subfamily/logFC_1", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### TE subfamily counts
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/Analyzing_K9me3_loss/TE_expression/outside_clusB/TE_subfamily_counts", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+---
