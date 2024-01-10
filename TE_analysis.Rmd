@@ -32,17 +32,18 @@ library(data.table)
   <li> TEs within 10kb upstream and downstream of genes are excluded </li>
   <li> TEs are grouped within their respective sub-families </li>
   <li> Exclusive subfamilies are filtered by at least 3 members of the subfamily having signifcant fold change in the positive or negative direction </li>
+  <li>Significantly regulated subfamilies were filtered using abs(log2FC) > 1 and padj < 0.05. </li>
 </ul>
 
 <b> Notable genome-wide observations </b>
 <ul>
-  <li>More TE subfamilies within the family <b>ERV1 and ERVK</b> tend to be upregulated than downregulated genome-wide regardless of whether they are found in cluster A or cluster B regions. On the other hand, more TE subfamilies within the family of <b>ERVL</b> tend to be downregulated than upregulated genome-wide.</li>
+  <li>More TE subfamilies within the family <b>ERVK</b> tend to be upregulated than downregulated genome-wide regardless of whether they are found in cluster A or cluster B regions.</li>
 </ul>
 
 ## TE subfamilies within clusB {.tabset}
 
 <ul>
-  <li>About 2 fold more TE subfamilies become upregulated in cluster B regions following TKO. Exclusively in these cluster B domains, more TE subfamilies in <b> ERVL-MaLR, L1 and L2 </b> become significantly upregulated than downregulated.</li>
+  <li>About 2 fold more TE subfamilies become upregulated in cluster B regions following TKO. Exclusively in these cluster B domains, more TE subfamilies in <b> ERVL-MaLR and L1 </b> become significantly upregulated than downregulated.</li>
 </ul>
 
 ### Volcano
@@ -60,8 +61,7 @@ include_graphics(imageList,dpi = 600)
 ## TE outside clusB {.tabset}
 
 <ul>
-  <li>A similar number of TE subfamilies become up- and downregulated in cluster A regions. Exclusively within cluster A regions, however, TE families of <b> ERVL-MaLR, hAT-Charlie, and L1 </b> become downregulated. </li>
-  <li>Significantly regulated subfamilies were filtered using abs(log2FC) > 1 and padj < 0.05. </li>
+  <li>A similar number of TE subfamilies become up- and downregulated in cluster A regions. Exclusively within cluster A regions, however, TE families of <b> ERVL-MaLR and L1 </b> become downregulated. </li>
 </ul>
 
 ### Volcano {.tabset}
