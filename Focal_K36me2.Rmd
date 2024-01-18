@@ -38,3 +38,44 @@ include_graphics(imageList,dpi = 600)
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/QKO_QuiKO/gene_expression/TKO_QKO", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
+
+## NSD_unedited vs ASH1L-KO
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/QKO_QuiKO/gene_expression/NSDunedit_ASH1LKO", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# Correlation between K36me2 peak size and downregulation {.tabset}
+
+## All 84 genes
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_peaks/correlation_peak_size_gene_expression/CPM/all", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Only K36me2 at promoters
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_peaks/correlation_peak_size_gene_expression/CPM/promoters", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+# PTM at 84 promoters {.tabset}
+
+## K4me1
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_peaks/centered_on_TSS/K4me1", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K27me3
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_peaks/centered_on_TSS/K27me3", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## ATAC
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_peaks/centered_on_TSS/ATAC", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
