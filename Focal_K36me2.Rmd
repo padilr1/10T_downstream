@@ -79,3 +79,46 @@ imageList <- list.files("~/Documents/10T_downstream/pushed_images/QKO_residual_p
 include_graphics(imageList,dpi = 600)
 ```
 
+# Promoters with and without K36me2 {.tabset}
+
+<ul>
+  <li>Genes are expression-matched, with expression ranging from 10 to 15 FPKM. </li>
+  <li>Afterwards, genes are randomly sampled within a group to match sample sizes. For example, 500 genes with K36me2 and 500 genes without K36me2. </li>
+  <li>The matrix of genes with their corresponding overlapping peaks and FPKM can be downloaded below. If a cutoff is used, it is using the column 'peak_count'. If a value of '-1' is found, it indicates that the gene's promoter does not overlap a K36me2 peak. </li>
+</ul>
+
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+xfun::embed_file(path = "~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/genes_FPKM_10_to_15.csv")
+```
+
+## No cut-off{.tabset}
+
+### log2FoldChanges
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/no_cut_off/log2FoldChanges", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/no_cut_off/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## Cutoff > 100 {.tabset}
+
+<ul>
+  <li>Only peaks with read counts greater than 100 are included.</li>
+</ul>
+
+### log2FoldChanges
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/cutoff_100_peak_read_counts/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/cutoff_100_peak_read_counts/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
