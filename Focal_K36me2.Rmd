@@ -122,3 +122,68 @@ include_graphics(imageList,dpi = 600)
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/FPKM_10_to_15/cutoff_100_peak_read_counts/FPKM", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
+
+# Large K36me2 enhancer regions {.tabset}
+<ul>
+  <li>Filtered for K36me2 TKO peaks with at least 100 read counts.</li>
+  <li>Filtered for peaks with at least 1 overlap with Ensembl annotated enhancer </li>
+  <li>Then, these filtered peaks were extended 20000 bp upstream and downstream </li>
+  <li>Genes were binned within 3 FPKM. For example, genes between 9 to 12 FPKM were grouped together </li>
+  <li>Genes were then segregated based on whether they overlapped a peak or not </li>
+</ul>
+
+## FPKM 3 to 6 {.tabset}
+
+### log2FoldChange
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_3_to_6/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_3_to_6/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## FPKM 9 to 12 {.tabset}
+
+### log2FoldChange
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## FPKM 15 to 18 {.tabset}
+
+### log2FoldChange
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_15_to_18/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_15_to_18/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## FPKM 21 to 24 {.tabset}
+
+### log2FoldChange
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_21_to_24/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_21_to_24/FPKM", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
