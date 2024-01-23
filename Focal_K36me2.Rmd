@@ -127,10 +127,14 @@ include_graphics(imageList,dpi = 600)
 <ul>
   <li>Filtered for K36me2 TKO peaks with at least 100 read counts.</li>
   <li>Filtered for peaks with at least 1 overlap with Ensembl annotated enhancer </li>
-  <li>Then, these filtered peaks were extended 20000 bp upstream and downstream </li>
+  <li>Then, these filtered peaks were extended 20000 bp upstream and downstream. The resulting peaks can be downloaded below. </li>
   <li>Genes were binned within 3 FPKM. For example, genes between 9 to 12 FPKM were grouped together </li>
   <li>Genes were then segregated based on whether they overlapped a peak or not </li>
 </ul>
+
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+xfun::embed_file(path = "~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/filt_peaks_with_enh.bed")
+```
 
 ## FPKM 3 to 6 {.tabset}
 
