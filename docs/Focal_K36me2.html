@@ -505,6 +505,57 @@ not
 </div>
 </div>
 </div>
+<div
+id="centered-on-atac-seq-peaks-within-large-k36me2-peaks-non-promoters"
+class="section level1 tabset">
+<h1 class="tabset">Centered on ATAC-seq peaks within large K36me2 peaks
+(non-promoters)</h1>
+<ul>
+<li>
+Filtered for ATAC-seq peaks found in both TKO and QKO overlapping the
+large K36me2 peaks.
+</li>
+<li>
+Any ATAC-seq peaks overlapping promoters were removed
+</li>
+</ul>
+<div id="atac-seq" class="section level2">
+<h2>ATAC-seq</h2>
+<p><img src="pushed_images/focal_K36me2/ATACseq_peaks_non_promoter/ATAC/QKO_TKO.ATACsignal_on_ATACpeaks.heatmap.png" width="50%" /></p>
+</div>
+<div id="k4me1-1" class="section level2">
+<h2>K4me1</h2>
+<p><img src="pushed_images/focal_K36me2/ATACseq_peaks_non_promoter/K4me1/QKO_TKO.K4me1.png" width="50%" /></p>
+</div>
+</div>
+<div id="k27ac-promoterenhancer-ratios" class="section level1">
+<h1>K27ac promoter/enhancer ratios</h1>
+<ul>
+<li>
+Filtered Fantom and Ensembl enhancers found within TKO K36me2 peaks. Ran
+featureCounts on K27ac bam files for these enhancers.
+</li>
+<li>
+Took promoters defined as 1000 bp upstream and 500 bp downstream. Ran
+featureCounts on K27ac bam files for these promoters.
+</li>
+<li>
+For each sample, took the sum of K27ac for enhancers, divided by the sum
+of enhancer lengths, and finally normalized by library depth (CPM). This
+process was repeat for each sample for promoters. Afterwards, the ratio
+of promoter to enhancer was calculated.
+</li>
+<li>
+Expectedly, there is greater signal at promoters compared to enhancers
+</li>
+<li>
+Upon losing K36me2, however, (TKO -&gt; QKO) enhancers also lose K27ac,
+with the promoter/enhancer K27ac ratio increasing in the QKO compared to
+TKO
+</li>
+</ul>
+<p><img src="pushed_images/K27ac/enhancer_promoter_ratios/K27ac.enhancer_promoter_ratios.png" width="100%" /></p>
+</div>
 
 
 
