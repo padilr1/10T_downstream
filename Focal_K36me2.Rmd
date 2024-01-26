@@ -27,9 +27,17 @@ library(data.table)
   <li>After filtering for genes > 1 FPKM, 84 genes are identified overlapping these 119 QKO K36me2 residual peaks. </li>
 </ul>
 
-## QKO vs QuiKO
+## QKO vs QuiKO {.tabset}
+
+### log2FoldChange
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
-imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/QKO_QuiKO/gene_expression/QKO_QuiKO", pattern= "*.png", full.names=T)
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/QKO_QuiKO/gene_expression/QKO_QuiKO/log2FoldChange", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM 
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/RNAseq/QKO_QuiKO/gene_expression/QKO_QuiKO/FPKM", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
