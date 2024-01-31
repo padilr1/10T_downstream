@@ -160,17 +160,46 @@ include_graphics(imageList,dpi = 600)
 
 ## FPKM 9 to 12 {.tabset}
 
-### log2FoldChange
+### log2FoldChange {.tabset}
+
+#### 20000 extend
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
-imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/log2FoldChange", pattern= "*.png", full.names=T)
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/log2FoldChange/20000", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
 
-### FPKM
+#### 50000 extend
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
-imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/FPKM", pattern= "*.png", full.names=T)
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/log2FoldChange/50000", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
+
+#### 100000 extend
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/log2FoldChange/100000", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+### FPKM {.tabset}
+
+#### 20000
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/FPKM/20000", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+#### 50000
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/FPKM/50000", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+#### 100000
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/large_enhancer_regions/FPKM_9_to_12/FPKM/100000", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
 
 ## FPKM 15 to 18 {.tabset}
 
@@ -218,7 +247,22 @@ imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/A
 include_graphics(imageList,dpi = 600)
 ```
 
-# K27ac promoter/enhancer ratios
+# Centered on ATAC-seq peaks within large K36me2 peaks (promoters) {.tabset}
+
+## ATAC-seq
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/ATACseq_peaks_promoter/ATAC", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## K4me1
+```{r,echo = FALSE,fig.show = "hold", out.width = "50%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/ATACseq_peaks_promoter/K4me1", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+
+# Promoter/enhancer ratios {.tabset}
 <ul>
   <li>Filtered Fantom and Ensembl enhancers found within TKO K36me2 peaks. Ran featureCounts on K27ac bam files for these enhancers.</li>
   <li>Took promoters defined as 1000 bp upstream and 500 bp downstream. Ran featureCounts on K27ac bam files for these promoters.</li>
@@ -227,7 +271,14 @@ include_graphics(imageList,dpi = 600)
   <li>Upon losing K36me2, however, (TKO -> QKO) enhancers also lose K27ac, with the promoter/enhancer K27ac ratio increasing in the QKO compared to TKO </li>
 </ul>
 
+## K27ac
 ```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
 imageList <- list.files("~/Documents/10T_downstream/pushed_images/K27ac/enhancer_promoter_ratios", pattern= "*.png", full.names=T)
+include_graphics(imageList,dpi = 600)
+```
+
+## ATAC-seq
+```{r,echo = FALSE,fig.show = "hold", out.width = "100%", fig.align = "default"}
+imageList <- list.files("~/Documents/10T_downstream/pushed_images/focal_K36me2/ATACseq_promoter_enhancer_ratio", pattern= "*.png", full.names=T)
 include_graphics(imageList,dpi = 600)
 ```
