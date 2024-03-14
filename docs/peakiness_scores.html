@@ -11,7 +11,7 @@
 
 
 
-<title>RNA-seq</title>
+<title>Peakiness scores</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -333,168 +333,29 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">RNA-seq</h1>
+<h1 class="title toc-ignore">Peakiness scores</h1>
 
 </div>
 
 
 <hr />
-<div id="pca" class="section level1">
-<h1>PCA</h1>
-<p><img src="pushed_images/RNAseq/PCA/10T_PCA_RNAseq_all_samples.png" width="100%" /></p>
-<hr />
+<div id="peakiness-scores" class="section level1">
+<h1>Peakiness scores</h1>
+<div id="h3k9me3" class="section level2">
+<h2>H3K9me3</h2>
+<p><img src="pushed_images/peakiness_scores/k9me3/H3K9me3_peakiness_plot.png" width="100%" /></p>
 </div>
-<div id="hc" class="section level1">
-<h1>HC</h1>
-<p><img src="pushed_images/RNAseq/HC/10T_HC_RNAseq_all_samples.png" width="100%" /></p>
-<hr />
+<div id="h3k27me3" class="section level2">
+<h2>H3K27me3</h2>
+<p><img src="pushed_images/peakiness_scores/k27me3/H3K27me3_peakiness_plot.png" width="100%" /></p>
 </div>
-<div id="paired-comparisons" class="section level1 tabset">
-<h1 class="tabset">Paired comparisons</h1>
-<div id="tko-compared-to-qko" class="section level2">
-<h2>TKO compared to QKO</h2>
-<p><img src="pushed_images/RNAseq/paired_comparisons/TKO_compared_to_QKO/filter_greater_than50.volcano.RNAseq.TKO_QKO.png" width="100%" /><img src="pushed_images/RNAseq/paired_comparisons/TKO_compared_to_QKO/volcano.RNAseq.TKO_QKO_labels.png" width="100%" /></p>
+<div id="h3k4me1" class="section level2">
+<h2>H3K4me1</h2>
+<p><img src="pushed_images/peakiness_scores/k4me1/H3K4me1_peakiness_plot.png" width="100%" /></p>
 </div>
-<div id="qko-compared-to-quiko" class="section level2">
-<h2>QKO compared to QuiKO</h2>
-<p><img src="pushed_images/RNAseq/paired_comparisons/QKO_compared_to_QuiKO/volcano.RNAseq.QKO_QuiKO.png" width="100%" /></p>
-</div>
-</div>
-<div id="distribution-histograms" class="section level1 tabset">
-<h1 class="tabset">Distribution histograms</h1>
-<ul>
-<li>
-For each comparison, only genes with FPKM &gt; 1 across conditions was
-used.
-</li>
-<li>
-No clear trends emerges from these plots
-</li>
-</ul>
-<div id="pa-compared-to-tko" class="section level2">
-<h2>PA compared to TKO</h2>
-<p><img src="pushed_images/RNAseq/histogram_distribution/PA_TKO/PA_TKO_gene_exp_histogram.png" width="100%" /></p>
-</div>
-<div id="pa-compared-to-qko" class="section level2">
-<h2>PA compared to QKO</h2>
-<p><img src="pushed_images/RNAseq/histogram_distribution/PA_QKO/PA_QKO_gene_exp_histogram.png" width="100%" /></p>
-</div>
-<div id="pa-compared-to-quiko" class="section level2">
-<h2>PA compared to QuiKO</h2>
-<p><img src="pushed_images/RNAseq/histogram_distribution/PA_QuiKO/PA_QuiKO_gene_exp_histogram.png" width="100%" /></p>
-</div>
-<div id="tko-compared-to-qko-1" class="section level2">
-<h2>TKO compared to QKO</h2>
-<p><img src="pushed_images/RNAseq/histogram_distribution/TKO_QKO/TKO_QKO_gene_exp_histogram.png" width="100%" /></p>
-</div>
-<div id="qko-compared-to-quiko-1" class="section level2">
-<h2>QKO compared to QuiKO</h2>
-<p><img src="pushed_images/RNAseq/histogram_distribution/QKO_QuiKO/QKO_QuiKO_gene_exp_histogram.png" width="100%" /></p>
-</div>
-</div>
-<div id="assessing-gene-expression-in-specific-quantiles"
-class="section level1 tabset">
-<h1 class="tabset">Assessing gene expression in specific quantiles</h1>
-<ul>
-<li>
-Per gene, the mean FPKM across all samples were computed. This was used
-to filter for genes with FPKM &gt; 1. Afterwards, the bottom 2000 genes
-were taken as lowly expressed genes and the top 2000 genes were taken as
-highly expressed genes. Additionally, 2000 random genes were generated
-for plotting.
-</li>
-<li>
-Replicates were averaged per condition.
-</li>
-<li>
-Wilcox test was used to calculate pairwise comparison p-value against
-the PA sample and adjusted using FDR.
-</li>
-</ul>
-<div id="lowly-expressed-genes" class="section level2">
-<h2>Lowly expressed genes</h2>
-<ul>
-<li>
-There is a trend for decreasing gene expression for lowly expressed
-genes following K36me depletion.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/quantile_separated/lowly_exp_genes/exp_across_lowly_exp_genes.png" width="100%" /></p>
-</div>
-<div id="highly-expressed-genes" class="section level2">
-<h2>Highly expressed genes</h2>
-<ul>
-<li>
-Unexpectedly, gene expression increases for highly expressed genes
-following me2 depletion.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/quantile_separated/highly_exp_genes/exp_across_highly_exp_genes.png" width="100%" /></p>
-</div>
-<div id="randomly-sampled-genes" class="section level2">
-<h2>Randomly sampled genes</h2>
-<p><img src="pushed_images/RNAseq/quantile_separated/random_genes/exp_across_random_genes.png" width="100%" /></p>
-</div>
-</div>
-<div id="promoters" class="section level1 tabset">
-<h1 class="tabset">Promoters</h1>
-<div id="k27me3" class="section level2">
-<h2>K27me3</h2>
-<ul>
-<li>
-For lowly expressed genes, there is greater K27me3 at the promoters of
-DKO, TKO and SETD2KO.
-</li>
-<li>
-For highly expressed genes, there is also greater K27me3 at the
-promoters of DKO, TKO and K36M-OE.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/promoters/K27me3/H3K27me3.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
-</div>
-<div id="k9me3" class="section level2">
-<h2>K9me3</h2>
-<ul>
-<li>
-For lowly expressed genes, there is greater K9me3 at the promoters of
-TKO and K36M_OE. DKO seems to have comparable levels at the promoter of
-these genes to PA.
-</li>
-<li>
-For highly expressed genes, the difference of K9me3 levels at the
-promoter across samples is attenuated.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/promoters/K9me3/H3K9me3.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
-</div>
-<div id="atac" class="section level2">
-<h2>ATAC</h2>
-<p><img src="pushed_images/RNAseq/promoters/ATAC/ATAC.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
-</div>
-<div id="k27ac" class="section level2">
-<h2>K27ac</h2>
-<ul>
-<li>
-At the promoters of lowly expressed genes, there appears to be slightly
-greater K27ac between K36M_OE/TKO versus PA. This increase appears to be
-more pronounced at the promoters of highly expressed genes.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/promoters/K27ac/H3K27ac.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
-</div>
-<div id="k4me1" class="section level2">
-<h2>K4me1</h2>
-<p><img src="pushed_images/RNAseq/promoters/K4me1/H3K4me1.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
-</div>
-<div id="dname" class="section level2">
-<h2>DNAme</h2>
-<ul>
-<li>
-Surprisingly, with greater me2 depletion, there is less DNAme at the
-promoters of lowly expressed genes.
-</li>
-</ul>
-<p><img src="pushed_images/RNAseq/promoters/DNAme/DNAme_recent_batch.promoters.heatmap_and_aggregate_profile.png" width="100%" /></p>
+<div id="h3k27ac" class="section level2">
+<h2>H3K27ac</h2>
+<p><img src="pushed_images/peakiness_scores/k27ac/H3K27ac_peakiness_plot.png" width="100%" /></p>
 </div>
 </div>
 
